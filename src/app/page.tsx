@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image';
 
 interface WeatherData {
   name: string;
@@ -101,9 +102,12 @@ export default function Home() {
                 </h2>
                 
                 <div className="text-center mb-4">
-                  <img
+                  <Image
                     src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
                     alt={weatherData.weather[0].description}
+                    width={80}
+                    height={80}
+                    priority
                     className="mx-auto w-20 h-20"
                   />
                   <p className="text-lg text-gray-600 capitalize">
